@@ -10,10 +10,15 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    private static  final  String TAG = "ololo";
+    private static  final  String KEY = "key";
+
     TextView resultField;
     Double firstValues, twoValues, result;
     String operation;
     private String text;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             text = savedInstanceState.getString("key");
             resultField.setText(text);
+            Log.d(TAG, "onCreate: succefull saved" + text);
         }
         Log.e("TAG", "onCreate:+= " + text);
     }
@@ -30,40 +36,40 @@ public class MainActivity extends AppCompatActivity {
     public void onNumberClick(View view) {
         switch (view.getId()) {
             case R.id.one:
-                resultField.setText(resultField.getText() +"1");
+                resultField.setText(resultField.getText() + "1");
                 break;
             case R.id.two:
-                resultField.setText(resultField.getText() +"2");
+                resultField.setText(resultField.getText() + "2");
                 break;
             case R.id.clear:
                 resultField.setText("");
                 break;
             case R.id.three:
-                resultField.setText(resultField.getText() +"3");
+                resultField.setText(resultField.getText() + "3");
                 break;
             case R.id.four:
-                resultField.setText(resultField.getText() +"4");
+                resultField.setText(resultField.getText() + "4");
                 break;
             case R.id.five:
                 resultField.setText(resultField.getText().toString() + "5");
                 break;
             case R.id.six:
-                resultField.setText(resultField.getText() +"6");
+                resultField.setText(resultField.getText() + "6");
                 break;
             case R.id.seven:
-                resultField.setText(resultField.getText() +"7");
+                resultField.setText(resultField.getText() + "7");
                 break;
             case R.id.eight:
-                resultField.setText(resultField.getText() +"8");
+                resultField.setText(resultField.getText() + "8");
                 break;
             case R.id.nine:
-                resultField.setText(resultField.getText() +"9");
+                resultField.setText(resultField.getText() + "9");
                 break;
             case R.id.zero:
-                resultField.setText(resultField.getText() +"0");
+                resultField.setText(resultField.getText() + "0");
                 break;
             case R.id.plus:
-                resultField.setText(resultField.getText() +"+");
+                resultField.setText(resultField.getText() + "+");
                 break;
         }
 
@@ -119,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     private void maltiplyOp() {
         result = firstValues * twoValues;
         resultField.setText(result.toString());
@@ -140,17 +147,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
         outState.putString("key", resultField.getText().toString());
         Log.e("TAG", "onSaveInstanceState: " + resultField.getText().toString());
     }
 
-    @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        resultField.setText(savedInstanceState.getString("key"));
-    }
+
 
     @Override
     protected void onDestroy() {

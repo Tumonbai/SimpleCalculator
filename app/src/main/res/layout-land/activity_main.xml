@@ -22,7 +22,7 @@
 
         <Button
             android:id="@+id/seven"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="60dp"
             android:onClick="onNumberClick"
             android:text="7"
@@ -30,7 +30,7 @@
 
         <Button
             android:id="@+id/eight"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="60dp"
             android:onClick="onNumberClick"
 
@@ -40,7 +40,7 @@
 
         <Button
             android:id="@+id/nine"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="60dp"
             android:onClick="onNumberClick"
             android:text="9"
@@ -72,7 +72,7 @@
 
         <Button
             android:id="@+id/four"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="60dp"
             android:onClick="onNumberClick"
             android:text="4"
@@ -81,7 +81,7 @@
 
         <Button
             android:id="@+id/five"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="60dp"
             android:onClick="onNumberClick"
             android:text="5"
@@ -90,7 +90,7 @@
 
         <Button
             android:id="@+id/six"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="60dp"
             android:onClick="onNumberClick"
             android:text="6"
@@ -127,7 +127,7 @@
 
         <Button
             android:id="@+id/one"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="60dp"
             android:onClick="onNumberClick"
             android:text="1"
@@ -135,7 +135,7 @@
 
         <Button
             android:id="@+id/two"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="60dp"
             android:onClick="onNumberClick"
             android:text="2"
@@ -144,7 +144,7 @@
 
         <Button
             android:id="@+id/three"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="60dp"
             android:onClick="onNumberClick"
             android:text="3"
@@ -180,7 +180,7 @@
 
         <Button
             android:id="@+id/zero"
-            android:layout_width="200dp"
+            android:layout_width="240dp"
             android:layout_height="60dp"
             android:onClick="onNumberClick"
             android:text="0"
@@ -189,7 +189,7 @@
 
         <Button
             android:id="@+id/dot"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="60dp"
             android:onClick="onOperationClick"
             android:text="."
