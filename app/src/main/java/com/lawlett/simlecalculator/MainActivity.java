@@ -3,6 +3,7 @@ package com.lawlett.simlecalculator;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
@@ -10,26 +11,19 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private static  final  String TAG = "ololo";
-    private static  final  String KEY = "key";
+    private static final String TAG = "ololo";
+    private static final String KEY = "key";
 
     TextView resultField;
     Double firstValues, twoValues, result;
     String operation;
     private String text;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         resultField = findViewById(R.id.result_field);
-        if (savedInstanceState != null) {
-            text = savedInstanceState.getString("key");
-            resultField.setText(text);
-            Log.d(TAG, "onCreate: succefull saved" + text);
-        }
         Log.e("TAG", "onCreate:+= " + text);
     }
 
@@ -71,6 +65,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.plus:
                 resultField.setText(resultField.getText() + "+");
                 break;
+            case R.id.save01:
+                Intent intent = getIntent();
+                intent.putExtra("key", resultField.getText().toString());
+                setResult(RESULT_OK, intent);
+                finish();
         }
 
     }
@@ -153,7 +152,11 @@ public class MainActivity extends AppCompatActivity {
         Log.e("TAG", "onSaveInstanceState: " + resultField.getText().toString());
     }
 
-
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        resultField.setText(savedInstanceState.getString("key"));
+    }
 
     @Override
     protected void onDestroy() {
